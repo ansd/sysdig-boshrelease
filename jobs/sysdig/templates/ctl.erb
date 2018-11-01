@@ -1,0 +1,30 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/sysdig
+LOG_DIR=/var/vcap/sys/log/sysdig
+PIDFILE=${RUN_DIR}/pid
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    echo $$ > $PIDFILE
+
+    exec /usr/local/bin/sysdig -w $LOG_DIR/sysdig.scap \
+      >>  $LOG_DIR/sysdig.stdout.log \
+      2>> $LOG_DIR/sysdig.stderr.log
+
+    ;;
+
+  stop)
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac

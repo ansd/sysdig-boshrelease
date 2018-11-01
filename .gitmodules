@@ -1,0 +1,3 @@
+[submodule "src/github.com/draios/sysdig"]
+	path = src/github.com/draios/sysdig
+	url = https://github.com/draios/sysdig

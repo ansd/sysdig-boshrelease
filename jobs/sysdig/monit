@@ -1,0 +1,5 @@
+check process sysdig
+  with pidfile /var/vcap/sys/run/sysdig/pid
+  start program "/var/vcap/jobs/sysdig/bin/ctl start"
+  stop program "/var/vcap/jobs/sysdig/bin/ctl stop"
+  group vcap

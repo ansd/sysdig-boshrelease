@@ -1,0 +1,9 @@
+---
+name: sysdig
+
+templates:
+  ctl.erb: bin/ctl
+
+packages: []
+
+properties: {}
