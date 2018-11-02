@@ -1,0 +1,7 @@
+---
+name: sysdig
+
+dependencies: []
+
+files:
+- github.com/draios/sysdig/**/*
