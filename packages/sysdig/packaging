@@ -10,9 +10,9 @@ apt-get -qq -y install linux-headers-$(uname -r) < /dev/null
 
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=${BOSH_INSTALL_TARGET} ..
+cmake -DCMAKE_INSTALL_PREFIX=$BOSH_INSTALL_TARGET ..
 make
 make install
-make install_driver
+cp driver/sysdig-probe.ko $BOSH_INSTALL_TARGET
 
 popd

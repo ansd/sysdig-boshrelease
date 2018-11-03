@@ -1,0 +1,15 @@
+#!/bin/bash -ex
+
+apt-get update
+apt-get -qq -y install libelf-dev < /dev/null
+
+PKG_DIR=/var/vcap/packages/sysdig/
+
+MODULE="sysdig_probe"
+if lsmod | grep "$MODULE" &> /dev/null ; then
+  echo "$MODULE is already loaded"
+  exit 0
+fi
+
+echo "$MODULE is not loaded. Loading..."
+insmod ${PKG_DIR}/sysdig-probe.ko
