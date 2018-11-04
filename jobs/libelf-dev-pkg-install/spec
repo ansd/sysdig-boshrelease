@@ -1,0 +1,5 @@
+---
+name: libelf-dev-pkg-install
+packages: ["libelf-dev"]
+templates:
+  bin/pre-start.sh: bin/pre-start
