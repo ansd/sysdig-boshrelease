@@ -3,7 +3,7 @@ name: sysdig
 
 templates:
   ctl.erb: bin/ctl
-  pre-start.erb: bin/pre-start
+  pre-start.sh: bin/pre-start
 
 packages: [sysdig]
 

@@ -1,7 +1,5 @@
 #!/bin/bash -ex
 
-PKG_DIR=/var/vcap/packages/sysdig/
-
 MODULE="sysdig_probe"
 if lsmod | grep "$MODULE" &> /dev/null ; then
   echo "$MODULE is already loaded"
@@ -9,4 +7,4 @@ if lsmod | grep "$MODULE" &> /dev/null ; then
 fi
 
 echo "$MODULE is not loaded. Loading..."
-insmod ${PKG_DIR}/sysdig-probe.ko
+insmod /var/vcap/packages/sysdig/sysdig-probe.ko
