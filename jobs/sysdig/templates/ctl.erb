@@ -12,7 +12,10 @@ case $1 in
 
     echo $$ > $PIDFILE
 
-    exec /var/vcap/packages/sysdig/bin/sysdig -w $LOG_DIR/sysdig.scap \
+    exec /var/vcap/packages/sysdig/bin/sysdig \
+      -C 10 \
+      -W 10 \
+      -w $LOG_DIR/sysdig.scap \
       >>  $LOG_DIR/sysdig.stdout.log \
       2>> $LOG_DIR/sysdig.stderr.log
 
