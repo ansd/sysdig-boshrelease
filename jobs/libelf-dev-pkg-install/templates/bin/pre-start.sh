@@ -1,5 +1,9 @@
 #!/bin/bash
 
 set -x
-cd /var/vcap/packages/libelf-dev/apt/cache/archives
-. install-packages.sh
+
+archivesDir="/var/vcap/packages/libelf-dev/apt/cache/archives"
+if [ -d "$archivesDir" ]; then
+  cd $archivesDir
+  . install-packages.sh
+fi

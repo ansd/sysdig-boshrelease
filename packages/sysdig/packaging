@@ -6,7 +6,7 @@ apt-get update
 apt-get -qq -y install libelf-dev < /dev/null
 apt-get -qq -y install linux-headers-$(uname -r) < /dev/null
 
-mkdir build
+mkdir -p build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=$BOSH_INSTALL_TARGET ..
 make
