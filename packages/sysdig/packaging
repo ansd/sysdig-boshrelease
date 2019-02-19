@@ -2,6 +2,9 @@ set -ex
 
 pushd github.com/draios/sysdig
 
+# https://github.com/cloudfoundry/bosh-linux-stemcell-builder/issues/39
+chmod 1777 /tmp
+
 apt-get update
 apt-get -qq -y install libelf-dev < /dev/null
 apt-get -qq -y install linux-headers-$(uname -r) < /dev/null
