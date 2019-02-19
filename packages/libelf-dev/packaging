@@ -12,6 +12,7 @@ mkdir -p "$cacheDir"
 ls -al /tmp
 chmod 1777 /tmp
 
+apt-get update
 apt-get install -y apt-transport-https apt-utils
 
 curl -sL https://raw.githubusercontent.com/starkandwayne/homebrew-cf/master/public.key | apt-key add -
