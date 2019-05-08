@@ -42,5 +42,5 @@ Sysdig continuously captures everything into rotating files `/var/vcap/sys/log/s
 
 ### Next steps
 
-- Make sysdig able to see BPM containers. For example `csysdig -pc container.type=bpm` should show processes. This will require changes to sysdig and bpm.
+- Make sysdig able to see BPM containers. For example `csysdig -pc container.type=bpm` should show processes. This will require changes to sysdig ([PR](https://github.com/draios/sysdig/pull/1319)) and bpm.
 - Introduce job spec properties to provide filter. Currently, by capturing everything the scap files get filled up quickly.
