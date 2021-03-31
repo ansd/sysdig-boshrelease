@@ -1,7 +1,5 @@
 ## [sysdig](https://github.com/draios/sysdig) BOSH release
 
-This is work in progress.
-
 Colocate this release on your BOSH deployed VMs in order to monitor BOSH jobs with sysdig.
 
 Example deployment manifest:
@@ -40,7 +38,7 @@ instance_groups:
 
 Sysdig continuously captures everything into rotating files `/var/vcap/sys/log/sysdig/sysdig.scap`.
 
-### Next steps
+### Missing next steps
 
 - Make sysdig able to see BPM containers. For example `csysdig -pc container.type=bpm` should show processes. This will require changes to sysdig ([PR](https://github.com/draios/sysdig/pull/1319)) and bpm.
 - Introduce job spec properties to provide filter. Currently, by capturing everything the scap files get filled up quickly.
